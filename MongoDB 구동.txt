@@ -1,0 +1,67 @@
+<MongoDB 구동>
+
+// MongoDB 버전 확인
+C:\Users\admin>mongod --version
+db version v7.0.0
+Build Info: {
+    "version": "7.0.0",
+    "gitVersion": "37d84072b5c5b9fd723db5fa133fb202ad2317f1",
+    "modules": [],
+    "allocator": "tcmalloc",
+    "environment": {
+        "distmod": "windows",
+        "distarch": "x86_64",
+        "target_arch": "x86_64"
+    }
+}
+
+
+// DB 조작하기
+use testDB   //  testDB 사용
+
+// 도큐먼트에 DB삽입
+db.myCollection.insertOne({x: 1})
+
+// 현재 DB확인
+db
+
+// DB 목록보기
+show dbs = show databases
+
+// DB의 컬렉션 목록 보기
+show collections
+
+// 단일 도큐먼트 삭제
+db.collection.deleteOne({ 조건 })
+
+// 여러 도큐먼트 삭제
+db.collection.deleteMany({ 조건 })
+
+// 전체 도큐먼트 삭제
+db.collection.deleteMany({})
+
+// 단일 도큐먼트 수정
+db.collection.updateOne({ 조건 }, { $set: { 필드: 값 } })
+
+// 여러 도큐먼트 수정
+db.collection.updateMany({ 조건 }, { $set: { 필드: 값 } })
+
+// 대체
+db.collection.replaceOne({ 조건 }, { 새로운 도큐먼트 })
+
+// 전체 도큐먼트 조회
+db.collection.find()
+
+// 조건에 맞는 도큐먼트 조회
+db.collection.find({ 조건 })
+
+
+
+
+
+
+
+
+
+
+
